@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Wheater App</title>
+		<title>Weather App</title>
 		<link rel="stylesheet" href="css/styles.css" type="text/css" />
 		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 		<script src="js/app.js"></script>
@@ -9,10 +9,57 @@
 	</head>
 	<body>
 
-		<div ng-app="wheatherApp" ng-controller="MainController">
-			<div id="city-input">
+		<div ng-app="weatherApp" ng-controller="MainController">
+			<form>
+				<div>
+					<input type="text"  class="city-input" ng-model="city" placeholder="Find by City..." />
+					<input type="submit" value="Find" class="city-input" />
+				</div>
 
-			</div>
+				<table id="weather-table">
+					<!-- 
+					name -> CITY
+					dt -> CALCULATION_TIME
+
+					sys.sunrise -> format with date filter
+					sys.sunset -> format with date filter
+
+					main.temp -> temperature in Kelvin convert to C | F
+					main.humidity -> in %
+					weather.main -> MAIN
+					weather.description -> DESC
+					-->
+
+					<tr>
+						<td colspan="2">{{ city | uppercase}}</td>
+					</tr>
+
+					<tr>
+						<td colspan="2"> new Date() | date: 'HH:mma ' }}</td>
+					</tr>
+
+					<tr>
+						<td>Sunrise: new Date() | date: 'HH:mma'}}</td>
+						<td>Sunset: new Date() | date: 'HH:mma'}}</td>
+					</tr>
+
+					<tr>
+						<td>Temeperature</td>
+						<td>temperature + "C | F"}}</td>
+					</tr>
+
+					<tr>
+						<td>weatherMain }}</td>
+						<td>weatherDescription }}</td>
+					</tr>
+
+					<tr>
+						<td>Humidity</td>
+						<td>humidity }}</td>
+					</tr>
+
+				</table>
+			</form>
 		</div>
 
 	</body>

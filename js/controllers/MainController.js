@@ -5,4 +5,6 @@ app.controller('MainController', function($scope){
 	$scope.constructRequestURI = function(city){
 		return $scope.BASE_URI + "&q=" + city.trim();
 	}
+
+	$scope.city = "Kathmandu";
 });

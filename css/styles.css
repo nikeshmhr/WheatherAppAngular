@@ -1,1 +1,11 @@
 * { font-family: Calibri, Verdana; }
+
+.city-input {
+	padding: 5px;
+	font-style: Italic;
+}
+
+#weather-table {
+	border: 1px;
+	width: 500px;
+}
